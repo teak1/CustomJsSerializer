@@ -186,19 +186,3 @@ window.Serializer = (function () {
 		}
 	}
 })();
-
-let ObjectForSerialization = {
-	bool: true,
-	Array: [{
-		hello: "world"
-	}],
-	string: "hello world",
-	func: function basicFunction(name) {
-		console.log("hello " + name);
-	}
-}
-console.log("ORIGINAL", ObjectForSerialization);
-let serialized = Serializer.Serializer(ObjectForSerialization).serialize();
-console.log("SERIALIZED OUTPUT", serialized);
-let deserialize = Serializer.Serializer(serialized).deserialize();
-console.log("DESERIALIZED", deserialize);
